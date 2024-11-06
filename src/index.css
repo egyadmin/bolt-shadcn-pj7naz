@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add Noto Sans Arabic font for Arabic text */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  --font-arabic: 'Noto Sans Arabic', sans-serif;
+
+  /* Custom Colors */
+  --color-primary: 221.2 83.2% 53.3%;
+  --color-primary-dark: 221.2 83.2% 43.3%;
+  --color-secondary: 226 71% 40%;
+  --color-success: 142 71% 45%;
+  --color-warning: 38 92% 50%;
+  --color-danger: 0 84% 60%;
+  --color-info: 199 89% 48%;
+}
+
+/* RTL Support */
+.direction-rtl {
+  font-family: var(--font-arabic);
+}
+
+/* Enhanced Layout Styles */
+.layout-container {
+  @apply min-h-screen bg-gray-50/50;
+}
+
+.content-wrapper {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.card-grid {
+  @apply grid gap-4 md:grid-cols-2 lg:grid-cols-3;
+}
+
+/* Enhanced Card Styles */
+.card-enhanced {
+  @apply bg-white/60 backdrop-blur-lg rounded-lg border shadow-sm 
+         hover:shadow-md transition-all duration-300;
+}
+
+.card-header-enhanced {
+  @apply p-6 border-b border-gray-100 dark:border-gray-800;
+}
+
+.card-content-enhanced {
+  @apply p-6;
+}
+
+/* Enhanced Chart Styles */
+.chart-container {
+  @apply rounded-lg bg-white/60 backdrop-blur-lg border p-4 
+         hover:shadow-md transition-all duration-300;
+}
+
+.chart-header {
+  @apply flex items-center justify-between mb-4;
+}
+
+.chart-title {
+  @apply text-lg font-semibold;
+}
+
+/* Enhanced Stats Card */
+.stat-card {
+  @apply bg-white/60 backdrop-blur-lg rounded-lg border p-6
+         hover:shadow-md transition-all duration-300;
+}
+
+.stat-icon {
+  @apply h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center;
+}
+
+.stat-value {
+  @apply text-2xl font-bold mt-2;
+}
+
+.stat-label {
+  @apply text-sm font-medium text-muted-foreground;
+}
+
+/* Enhanced Navigation */
+.nav-container {
+  @apply fixed inset-y-0 z-20 flex w-64 flex-col;
+}
+
+.nav-header {
+  @apply flex h-16 items-center px-4 border-b bg-white/60 backdrop-blur-lg;
+}
+
+.nav-content {
+  @apply flex flex-1 flex-col overflow-y-auto bg-white/60 backdrop-blur-lg;
+}
+
+.nav-item {
+  @apply flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors;
+}
+
+.nav-item-active {
+  @apply bg-primary/10 text-primary;
+}
+
+/* Enhanced Button Styles */
+.btn-primary {
+  @apply bg-primary hover:bg-primary/90 text-white;
+}
+
+.btn-secondary {
+  @apply bg-secondary hover:bg-secondary/90 text-white;
+}
+
+.btn-outline {
+  @apply border-2 border-primary text-primary hover:bg-primary hover:text-white;
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+  
+  .print-break-inside {
+    break-inside: avoid;
+  }
+}
